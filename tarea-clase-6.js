@@ -23,7 +23,7 @@ let salarioAnualPromedio;
 let salarioMensualPromedio;
 let parrafoVacio = document.querySelector("p");
 
-const CALCULA_MAYOR_SALARIO_ANUAL = function(){
+const calculaMayorSalarioAnual = function(){
     const FAMILIARES_QUE_TRABAJAN = document.querySelectorAll("#familiar-que-trabaja");
     if(FAMILIARES_QUE_TRABAJAN.length === 1) {
         mayorSalario = document.querySelector("#monto-salario").value;
@@ -36,7 +36,7 @@ const CALCULA_MAYOR_SALARIO_ANUAL = function(){
     }
 }
 
-const CALCULA_MENOR_SALARIO_ANUAL = function(){
+const calculaMenorSalarioAnual = function(){
     const FAMILIARES_QUE_TRABAJAN = document.querySelectorAll("#familiar-que-trabaja");
     if(FAMILIARES_QUE_TRABAJAN.length === 1) {
         menorSalario = document.querySelector("#monto-salario").value;
@@ -49,7 +49,7 @@ const CALCULA_MENOR_SALARIO_ANUAL = function(){
     }
 }
 
-const CALCULA_SALARIO_ANUAL_PROMEDIO = function(){
+const calculaSalarioAnualPromedio = function(){
     const FAMILIARES_QUE_TRABAJAN = document.querySelectorAll("#familiar-que-trabaja");
     if(FAMILIARES_QUE_TRABAJAN.length === 1) {
         salarioAnualPromedio = document.querySelector("#monto-salario").value;
@@ -64,7 +64,7 @@ const CALCULA_SALARIO_ANUAL_PROMEDIO = function(){
     }
 }
 
-const CALCULA_SALARIO_MENSUAL_PROMEDIO = function(){
+const calculaSalarioMensualPromedio = function(){
     const MESES_EN_UN_ANIO = 12;
     const FAMILIARES_QUE_TRABAJAN = document.querySelectorAll("#familiar-que-trabaja");
     if(FAMILIARES_QUE_TRABAJAN.length === 1) {
@@ -103,10 +103,10 @@ $botonQuitar.onclick = function(){
 }
 
 $botonCalcular.onclick = function(){
-    CALCULA_MAYOR_SALARIO_ANUAL();
-    CALCULA_MENOR_SALARIO_ANUAL();
-    CALCULA_SALARIO_ANUAL_PROMEDIO();
-    CALCULA_SALARIO_MENSUAL_PROMEDIO();
+    calculaMayorSalarioAnual();
+    calculaMenorSalarioAnual();
+    calculaSalarioAnualPromedio();
+    calculaSalarioMensualPromedio();
     parrafoVacio.textContent = `El mayor salario anual es ${mayorSalario}, el menor es ${menorSalario}, el anual promedio ${salarioAnualPromedio}, y el mensual promedio es ${salarioMensualPromedio}`;
     return false;
 }
